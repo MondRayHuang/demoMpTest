@@ -16,10 +16,7 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
     public void insertFill(MetaObject metaObject) {
         this.setFieldValByName("createTime", new Date(),metaObject);
         this.setFieldValByName("updateTime",new Date(),metaObject);
-        //this.strictInsertFill(metaObject,"create_time",LocalDateTime.class,LocalDateTime.now());
-        //this.strictInsertFill(metaObject,"update_time",LocalDateTime.class,LocalDateTime.now());
-        System.out.println("我进来了");
-        System.out.println(LocalDateTime.now());
+        this.setFieldValByName("version",1,metaObject);
     }
 
     @Override
